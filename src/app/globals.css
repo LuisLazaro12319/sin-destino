@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
-/* Paleta blanco + grafito, acento rojo (modo claro, por defecto). */
+/* Paleta blanco + grafito, acento violeta claro (modo claro, por defecto). */
 :root {
   --background: #ffffff;
   --superficie: #f4f5f7;
   --borde: #e3e5ea;
   --foreground: #16171b;
   --tenue: #6b7178;
-  --acento: #d81e2c;
-  --acento-fuerte: #b3121f;
+  --acento: #8b5cf6;
+  --acento-fuerte: #7c3aed;
 }
 
-/* Modo oscuro: negro + rojo brillante (estilo streetwear). */
+/* Modo oscuro: negro + violeta claro brillante (estilo streetwear). */
 :root[data-theme="dark"] {
   --background: #0b0b0d;
   --superficie: #16171a;
   --borde: #2a2b30;
   --foreground: #f4f5f7;
   --tenue: #9aa0a8;
-  --acento: #ff3b48;
-  --acento-fuerte: #ff6b75;
+  --acento: #b79dff;
+  --acento-fuerte: #cdbcff;
   color-scheme: dark;
 }
 
