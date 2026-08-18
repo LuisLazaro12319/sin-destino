@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { productos } from "@/data/productos";
 import { ProductoCard } from "@/components/ProductoCard";
 import { ModoToggle } from "@/components/ModoToggle";
@@ -29,15 +30,16 @@ export default function Home() {
   return (
     <>
       <section className="relative overflow-hidden bg-superficie">
-        {/* Glow al estilo del logo, tomando el color de la marca */}
-        <div
+        <Image
+          src={`${BASE_PATH}/fondo-inicio.png`}
+          alt=""
           aria-hidden
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(115% 80% at 82% 8%, color-mix(in srgb, var(--acento) 22%, transparent), transparent 60%)",
-          }}
+          fill
+          priority
+          className="object-cover object-[center_28%]"
         />
+        {/* Degradé para que el texto se lea sobre la foto, en claro y oscuro */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/35 sm:to-background/10" />
         <div className="relative mx-auto max-w-7xl px-4 py-28 sm:px-6 sm:py-44 lg:py-52">
           <p className="mb-4 text-xs uppercase tracking-[0.25em] text-acento">
             Indumentaria masculina · Venta por mayor

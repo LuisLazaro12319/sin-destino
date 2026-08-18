@@ -454,7 +454,7 @@ export function AdminPanel() {
                 <label className="mb-1.5 block text-xs font-medium text-tenue">Imagen de fondo</label>
                 <div
                   className="relative mb-1.5 h-32 overflow-hidden rounded-lg border border-borde bg-cover bg-center"
-                  style={{ backgroundImage: `url(${BASE_PATH}/fondo-inicio.jpg)` }}
+                  style={{ backgroundImage: `url(${BASE_PATH}/fondo-inicio.png)` }}
                 >
                   <span className="absolute bottom-2 right-2 cursor-not-allowed rounded-lg bg-background/90 px-3 py-1.5 text-xs font-semibold text-acento">🖼️ Cambiar imagen</span>
                 </div>
