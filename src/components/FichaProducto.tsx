@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useTienda } from "@/context/TiendaContext";
 import { PrendaPlaceholder } from "@/components/PrendaPlaceholder";
 import { CintaAgotado } from "@/components/CintaAgotado";
+import { CintaOferta } from "@/components/CintaOferta";
 import { precio } from "@/lib/formato";
 import { linkConsulta } from "@/lib/whatsapp";
 import { MINIMO_MAYORISTA, BASE_PATH } from "@/lib/config";
@@ -42,6 +43,7 @@ export function FichaProducto({ producto }: { producto: Producto }) {
       <div>
         <div className="relative overflow-hidden rounded-2xl border border-borde">
           {producto.sinStock && <CintaAgotado />}
+          {producto.oferta && !producto.sinStock && <CintaOferta />}
           <div className="aspect-[4/5]">
             {fotoPrincipal ? (
               <Image
