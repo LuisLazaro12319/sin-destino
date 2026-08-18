@@ -52,8 +52,7 @@ export const FONDOS = {
  * difuminado. Vacío = no se muestra la sección.
  */
 export const PROMOS: { imagen: string; titulo: string; link: string }[] = [
-  // Vacío hasta que Sin Destino suba sus propios banners (los de la plantilla
-  // eran de otra marca). Sin promos, la sección no se muestra.
+  { imagen: "promos/promo-sindestino.png", titulo: "Ofertas hasta 50% OFF", link: "/productos?ver=ofertas" },
 ];
 
 /**
