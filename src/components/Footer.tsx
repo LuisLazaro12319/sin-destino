@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Separador } from "@/components/Separador";
-import { MARCA, TEL_MAYORISTA_VISIBLE, WHATSAPP } from "@/lib/config";
+import { MARCA, TEL_MAYORISTA_VISIBLE, WHATSAPP, BASE_PATH } from "@/lib/config";
 
 /**
  * Bandera argentina dibujada a mano.
@@ -60,9 +61,18 @@ export function Footer() {
       <Separador />
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <span className="titulo-display text-xl font-extrabold italic tracking-tighter">
-            {MARCA.nombre}
-          </span>
+          <div className="flex items-center gap-2.5">
+            <Image
+              src={`${BASE_PATH}/logo.png`}
+              alt=""
+              width={80}
+              height={80}
+              className="h-10 w-10 rounded-full object-cover"
+            />
+            <span className="titulo-display text-xl font-extrabold italic tracking-tighter">
+              {MARCA.nombre}
+            </span>
+          </div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-tenue">
             {MARCA.descripcion}
           </p>
