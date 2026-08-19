@@ -16,11 +16,11 @@ export function ModoToggle({ tamano = "md" }: ModoToggleProps) {
   };
 
   return (
-    <div className="inline-flex border border-borde bg-superficie/80 p-1 backdrop-blur-sm">
+    <div className="inline-flex rounded-none border border-borde bg-superficie/80 p-1 backdrop-blur-sm">
       <button
         type="button"
         onClick={() => setModo("minorista")}
-        className={`font-bold uppercase tracking-wider transition-all duration-200 ${
+        className={`rounded-none font-bold uppercase tracking-wider transition-all duration-200 ${
           tamanos[tamano]
         } ${
           modo === "minorista"
@@ -33,7 +33,7 @@ export function ModoToggle({ tamano = "md" }: ModoToggleProps) {
       <button
         type="button"
         onClick={() => setModo("mayorista")}
-        className={`font-bold uppercase tracking-wider transition-all duration-200 ${
+        className={`rounded-none font-bold uppercase tracking-wider transition-all duration-200 ${
           tamanos[tamano]
         } ${
           modo === "mayorista"
