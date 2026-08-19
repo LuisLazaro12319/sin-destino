@@ -104,17 +104,16 @@ export default function Home() {
                 Somos fabricantes. Elegí las prendas, armá tu pedido por mayor y lo cerramos por WhatsApp — con envíos a todo el país.
               </p>
 
-              {/* BOTONES HERO CON BORDES RECTOS */}
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link
                   href="/productos"
-                  className="inline-flex items-center justify-center rounded-none bg-acento px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-black transition-transform hover:scale-[1.02] active:scale-95"
+                  className="inline-flex h-12 items-center justify-center rounded-none bg-acento px-6 text-sm font-bold uppercase tracking-wider text-black transition-transform hover:scale-[1.02] active:scale-95"
                 >
                   VER CATÁLOGO →
                 </Link>
                 <Link
                   href="/productos?ver=mayorista"
-                  className="inline-flex items-center justify-center rounded-none border border-borde bg-superficie px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-foreground transition-all hover:bg-superficie/80"
+                  className="inline-flex h-12 items-center justify-center rounded-none border border-borde bg-superficie px-6 text-sm font-bold uppercase tracking-wider text-foreground transition-all hover:bg-superficie/80"
                 >
                   PRECIOS MAYORISTAS
                 </Link>
@@ -199,19 +198,22 @@ export default function Home() {
 
       <Separador />
 
-      {/* SECCIÓN MAYORISTA CON BOTONES TOTALMENTE RECTOS */}
-      <section className="relative w-full bg-black text-white flex items-center justify-center overflow-hidden py-16 lg:py-24 px-4">
+      {/* SECCIÓN MAYORISTA DE ALTO COMPLETO Y BOTONES CON MISMA ALTURA */}
+      <section className="relative w-full min-h-[680px] lg:min-h-[780px] bg-black text-white flex items-center justify-center overflow-hidden py-16 px-4">
         
+        {/* IMAGEN DE FONDO COMPLETA */}
         <Image
           src={`${BASE_PATH}/fondo-mayorista.png`}
           alt="Fondo Comprá Mayorista"
           fill
           priority
+          sizes="100vw"
           className="object-cover object-center z-0"
         />
 
-        <div className="absolute inset-0 bg-black/50 z-10" />
+        <div className="absolute inset-0 bg-black/40 z-10" />
 
+        {/* CONTENIDO CENTRAL */}
         <div className="relative z-20 mx-auto max-w-3xl text-center space-y-6">
           
           <div className="flex items-center justify-center gap-4">
@@ -264,17 +266,16 @@ export default function Home() {
 
           </div>
 
-          {/* BOTONES CON BORDES COMPLETAMENTE RECTOS (rounded-none) */}
+          {/* BOTONES CON LA MISMA ALTURA EXACTA (h-12 / 48px) */}
           <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/productos"
-              className="inline-flex items-center justify-center rounded-none bg-acento px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-black transition-transform hover:scale-[1.02] active:scale-95 shadow-lg"
+              className="inline-flex h-12 items-center justify-center rounded-none bg-acento px-8 text-sm font-bold uppercase tracking-wider text-black transition-transform hover:scale-[1.02] active:scale-95 shadow-lg"
             >
               VER CATÁLOGO →
             </Link>
 
-            {/* FORZAMOS BORDES RECTOS EN EL COMPONENTE MODO TOGGLE */}
-            <div className="[&_button]:!rounded-none [&_div]:!rounded-none">
+            <div className="h-12 flex items-center [&_button]:!h-9 [&_button]:!rounded-none [&_div]:!rounded-none">
               <ModoToggle tamano="lg" />
             </div>
           </div>
