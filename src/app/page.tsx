@@ -64,10 +64,9 @@ export default function Home() {
         }
       `}</style>
 
-      {/* HERO DE ALTO COMPLETO CON TRANSICIÓN RECTA Y LIMPIA */}
+      {/* HERO PRINCIPAL */}
       <section className="relative w-full min-h-[85vh] lg:min-h-[90vh] bg-background text-foreground overflow-hidden flex items-center">
         
-        {/* FOTO A TOPE DE ALTO */}
         <div className="absolute inset-y-0 right-0 w-full lg:w-[50vw] xl:w-[45vw] h-full pointer-events-none z-0">
           <Image
             src={`${BASE_PATH}/fondo-inicio.png`}
@@ -83,7 +82,6 @@ export default function Home() {
           <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-background to-transparent z-10" />
         </div>
 
-        {/* CONTENIDO TEXTO / ACCIONES */}
         <div className="relative z-20 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
@@ -200,10 +198,10 @@ export default function Home() {
 
       <Separador />
 
-      {/* NUEVA SECCIÓN MAYORISTA CON IMAGEN DE FONDO IMPACTANTE */}
-      <section className="relative w-full min-h-[520px] lg:min-h-[600px] flex items-center justify-center overflow-hidden py-16 px-4">
+      {/* SECCIÓN MAYORISTA CON FONDO QUE RELLENA EL 100% Y BOTONES CUADRADOS */}
+      <section className="relative w-full bg-black text-white flex items-center justify-center overflow-hidden py-16 lg:py-24 px-4">
         
-        {/* IMAGEN DE FONDO CON LOS MODELOS Y CORONAS DE NEÓN */}
+        {/* IMAGEN DE FONDO COMPLETA DE BORDES A BORDES */}
         <Image
           src={`${BASE_PATH}/fondo-mayorista.png`}
           alt="Fondo Comprá Mayorista"
@@ -212,13 +210,11 @@ export default function Home() {
           className="object-cover object-center z-0"
         />
 
-        {/* OVERLAY SUTIL PARA GARANTIZAR LEGIBILIDAD DEL TEXTO EN EL CENTRO */}
-        <div className="absolute inset-0 bg-black/40 z-10" />
+        <div className="absolute inset-0 bg-black/50 z-10" />
 
         {/* CONTENIDO CENTRAL */}
-        <div className="relative z-20 mx-auto max-w-3xl text-center text-white space-y-6">
+        <div className="relative z-20 mx-auto max-w-3xl text-center space-y-6">
           
-          {/* SUBTÍTULO CON LÍNEAS LATERALES */}
           <div className="flex items-center justify-center gap-4">
             <span className="h-[1px] w-12 bg-acento/60 hidden sm:block" />
             <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.3em] text-white/90">
@@ -227,17 +223,14 @@ export default function Home() {
             <span className="h-[1px] w-12 bg-acento/60 hidden sm:block" />
           </div>
 
-          {/* TÍTULO PRINCIPAL */}
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none text-white">
             COMPRÁ <span className="text-acento">MAYORISTA</span>
           </h2>
 
-          {/* DESCRIPCIÓN */}
           <p className="max-w-xl mx-auto text-sm sm:text-base text-zinc-300 leading-relaxed font-medium">
             Ropa de hombre y mujer al mejor precio, calidad y estilo. Accedé a precios de fábrica desde solo {MINIMO_MAYORISTA} prendas.
           </p>
 
-          {/* TRES ÍCONOS / BENEFICIOS */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 pb-2 border-y border-white/10 max-w-2xl mx-auto">
             
             <div className="flex sm:flex-col items-center justify-center gap-3 text-left sm:text-center">
@@ -272,16 +265,19 @@ export default function Home() {
 
           </div>
 
-          {/* BOTÓN VER CATÁLOGO + SWITCH MINORISTA/MAYORISTA */}
+          {/* BOTONES CON BORDES CUADRADOS (`rounded-lg`) */}
           <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/productos"
-              className="inline-flex items-center justify-center rounded-xl bg-acento px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-black transition-transform hover:scale-105 active:scale-95 shadow-lg"
+              className="inline-flex items-center justify-center rounded-lg bg-acento px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-black transition-transform hover:scale-105 active:scale-95 shadow-lg"
             >
               Ver catálogo
             </Link>
 
-            <ModoToggle tamano="lg" />
+            {/* FORZAMOS BORDES CUADRADOS EN EL TOGGLE DE MAYORISTA/MINORISTA */}
+            <div className="[&_button]:!rounded-lg [&_div]:!rounded-lg">
+              <ModoToggle tamano="lg" />
+            </div>
           </div>
 
         </div>
