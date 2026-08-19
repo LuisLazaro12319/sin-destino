@@ -104,16 +104,17 @@ export default function Home() {
                 Somos fabricantes. Elegí las prendas, armá tu pedido por mayor y lo cerramos por WhatsApp — con envíos a todo el país.
               </p>
 
+              {/* BOTONES HERO CON BORDES RECTOS */}
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link
                   href="/productos"
-                  className="inline-flex items-center justify-center rounded-lg bg-acento px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-black transition-transform hover:scale-105 active:scale-95"
+                  className="inline-flex items-center justify-center rounded-none bg-acento px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-black transition-transform hover:scale-[1.02] active:scale-95"
                 >
                   VER CATÁLOGO →
                 </Link>
                 <Link
                   href="/productos?ver=mayorista"
-                  className="inline-flex items-center justify-center rounded-lg border border-borde bg-superficie px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-foreground transition-all hover:bg-superficie/80"
+                  className="inline-flex items-center justify-center rounded-none border border-borde bg-superficie px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-foreground transition-all hover:bg-superficie/80"
                 >
                   PRECIOS MAYORISTAS
                 </Link>
@@ -198,10 +199,9 @@ export default function Home() {
 
       <Separador />
 
-      {/* SECCIÓN MAYORISTA CON FONDO QUE RELLENA EL 100% Y BOTONES CUADRADOS */}
+      {/* SECCIÓN MAYORISTA CON BOTONES TOTALMENTE RECTOS */}
       <section className="relative w-full bg-black text-white flex items-center justify-center overflow-hidden py-16 lg:py-24 px-4">
         
-        {/* IMAGEN DE FONDO COMPLETA DE BORDES A BORDES */}
         <Image
           src={`${BASE_PATH}/fondo-mayorista.png`}
           alt="Fondo Comprá Mayorista"
@@ -212,7 +212,6 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-black/50 z-10" />
 
-        {/* CONTENIDO CENTRAL */}
         <div className="relative z-20 mx-auto max-w-3xl text-center space-y-6">
           
           <div className="flex items-center justify-center gap-4">
@@ -265,17 +264,17 @@ export default function Home() {
 
           </div>
 
-          {/* BOTONES CON BORDES CUADRADOS (`rounded-lg`) */}
+          {/* BOTONES CON BORDES COMPLETAMENTE RECTOS (rounded-none) */}
           <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/productos"
-              className="inline-flex items-center justify-center rounded-lg bg-acento px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-black transition-transform hover:scale-105 active:scale-95 shadow-lg"
+              className="inline-flex items-center justify-center rounded-none bg-acento px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-black transition-transform hover:scale-[1.02] active:scale-95 shadow-lg"
             >
-              Ver catálogo
+              VER CATÁLOGO →
             </Link>
 
-            {/* FORZAMOS BORDES CUADRADOS EN EL TOGGLE DE MAYORISTA/MINORISTA */}
-            <div className="[&_button]:!rounded-lg [&_div]:!rounded-lg">
+            {/* FORZAMOS BORDES RECTOS EN EL COMPONENTE MODO TOGGLE */}
+            <div className="[&_button]:!rounded-none [&_div]:!rounded-none">
               <ModoToggle tamano="lg" />
             </div>
           </div>
