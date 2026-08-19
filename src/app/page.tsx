@@ -102,16 +102,17 @@ export default function Home() {
       <Separador />
 
       <SeccionConFondo fondo={FONDOS.compras} className="px-4 py-16 sm:px-6">
-        <div className="mx-auto max-w-7xl rounded-2xl border border-borde bg-superficie p-8 sm:p-12">
-          <h2 className="titulo-display text-2xl sm:text-3xl">
-            ¿Comprás por cantidad?
-          </h2>
-          <p className="mt-3 max-w-xl leading-relaxed text-tenue">
-            Desde {MINIMO_MAYORISTA} prendas accedés a precios mayoristas.
-            Cambiá el modo arriba y vas a ver los precios por unidad en todo el
-            catálogo. Tu pedido se envía directo al canal mayorista.
+        <div className="mx-auto max-w-4xl rounded-2xl border border-borde bg-superficie/90 p-8 sm:p-14 text-center backdrop-blur-sm">
+          <p className="mb-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-acento">
+            Para revendedores
           </p>
-          <div className="mt-7">
+          <h2 className="titulo-display text-4xl sm:text-6xl font-black uppercase tracking-tight">
+            Comprá <span className="text-acento">Mayorista</span>
+          </h2>
+          <p className="mt-4 max-w-xl mx-auto text-base sm:text-lg leading-relaxed text-tenue">
+            Accedé a precios de fábrica desde solo {MINIMO_MAYORISTA} prendas. Ideal para revendedores, tiendas y comerciantes.
+          </p>
+          <div className="mt-8 flex justify-center">
             <ModoToggle tamano="lg" />
           </div>
         </div>
