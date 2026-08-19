@@ -64,27 +64,27 @@ export default function Home() {
         }
       `}</style>
 
-      {/* HERO DIVIDIDO EN 2 COLUMNAS */}
-      <section className="relative min-h-[85vh] bg-black text-white overflow-hidden flex flex-col justify-between">
+      {/* HERO ADAPTABLE A MODO DÍA / NOCHE */}
+      <section className="relative min-h-[85vh] bg-background text-foreground overflow-hidden flex flex-col justify-between">
         <div className="mx-auto max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 items-center px-4 pt-10 pb-6 sm:px-6 lg:px-8 gap-8 my-auto">
           
           {/* LADO IZQUIERDO */}
           <div className="lg:col-span-7 space-y-6 z-10 pt-4">
             
-            <div className="inline-flex items-center gap-2 rounded-full bg-zinc-900 border border-zinc-800 px-3 py-1 text-xs text-zinc-300">
+            <div className="inline-flex items-center gap-2 rounded-full bg-superficie border border-borde px-3 py-1 text-xs text-tenue">
               <span className="h-2 w-2 rounded-full bg-acento animate-pulse" />
               <span className="font-medium tracking-wide uppercase text-[11px]">
                 INDUMENTARIA MASCULINA · VENTA POR MAYOR
               </span>
             </div>
 
-            <h1 className="text-5xl sm:text-7xl font-black uppercase tracking-tight leading-[0.95] text-white">
+            <h1 className="text-5xl sm:text-7xl font-black uppercase tracking-tight leading-[0.95] text-foreground">
               ROPA DE <br />
               HOMBRE <br />
               <span className="text-acento">DIRECTO DE FÁBRICA</span>
             </h1>
 
-            <p className="max-w-xl text-zinc-400 text-sm sm:text-base leading-relaxed">
+            <p className="max-w-xl text-tenue text-sm sm:text-base leading-relaxed">
               Somos fabricantes. Elegí las prendas, armá tu pedido por mayor y lo cerramos por WhatsApp — con envíos a todo el país.
             </p>
 
@@ -97,22 +97,22 @@ export default function Home() {
               </Link>
               <Link
                 href="/productos?ver=mayorista"
-                className="inline-flex items-center justify-center rounded-lg border border-zinc-700 bg-zinc-900/80 px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition-all hover:border-zinc-500 hover:bg-zinc-800"
+                className="inline-flex items-center justify-center rounded-lg border border-borde bg-superficie px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-foreground transition-all hover:bg-superficie/80"
               >
                 PRECIOS MAYORISTAS
               </Link>
             </div>
 
-            <div className="border-t border-zinc-800/80 pt-6 mt-8" />
+            <div className="border-t border-borde pt-6 mt-8" />
 
             <div className="grid grid-cols-3 gap-4 pt-2">
               {BENEFICIOS.map((b) => (
                 <div key={b.titulo} className="space-y-1">
                   <div className="mb-2">{b.icon}</div>
-                  <p className="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider">
+                  <p className="text-[11px] font-semibold text-tenue uppercase tracking-wider">
                     {b.titulo}
                   </p>
-                  <p className="text-xs font-black uppercase text-white tracking-wide">
+                  <p className="text-xs font-black uppercase text-foreground tracking-wide">
                     {b.sub}
                   </p>
                 </div>
@@ -123,7 +123,7 @@ export default function Home() {
 
           {/* LADO DERECHO */}
           <div className="lg:col-span-5 relative h-[500px] lg:h-[620px] w-full flex items-end justify-center">
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
             
             <Image
               src={`${BASE_PATH}/fondo-inicio.png`}
@@ -133,7 +133,7 @@ export default function Home() {
               className="object-cover object-center rounded-2xl lg:rounded-none grayscale-[20%] hover:grayscale-0 transition-all duration-700"
             />
 
-            <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 rotate-90 origin-right text-[10px] font-bold tracking-[0.4em] text-zinc-500/80 uppercase select-none z-20">
+            <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 rotate-90 origin-right text-[10px] font-bold tracking-[0.4em] text-tenue/60 uppercase select-none z-20">
               ESTILO · COMODIDAD · ACTITUD
             </div>
           </div>
@@ -141,7 +141,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CINTA DESPLAZABLE CONECTADA AL TEMA */}
+      {/* CINTA DESPLAZABLE */}
       <div className="bg-acento text-black py-3.5 overflow-hidden select-none">
         <div className="animate-marquee-loop whitespace-nowrap flex items-center gap-8 text-sm font-black uppercase tracking-wider">
           {[...TEXTOS_CINTA, ...TEXTOS_CINTA, ...TEXTOS_CINTA, ...TEXTOS_CINTA].map((texto, i) => (
@@ -166,13 +166,13 @@ export default function Home() {
               <p className="text-xs uppercase tracking-[0.2em] text-acento font-semibold mb-1">
                 EL CATÁLOGO
               </p>
-              <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white">
+              <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-foreground">
                 DESTACADOS
               </h2>
             </div>
             <Link
               href="/productos"
-              className="shrink-0 text-sm font-bold uppercase tracking-wider text-zinc-400 transition-colors hover:text-acento"
+              className="shrink-0 text-sm font-bold uppercase tracking-wider text-tenue transition-colors hover:text-acento"
             >
               Ver todo ↗
             </Link>
@@ -192,15 +192,16 @@ export default function Home() {
 
       <Separador />
 
+      {/* BANNER MAYORISTA SUELTO (SIN RECUADRO) */}
       <SeccionConFondo fondo={FONDOS.compras} className="px-4 py-16 sm:px-6">
-        <div className="mx-auto max-w-4xl rounded-2xl border border-zinc-800 bg-zinc-950/90 p-8 sm:p-14 text-center backdrop-blur-sm">
+        <div className="mx-auto max-w-4xl py-8 sm:py-14 text-center">
           <p className="mb-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-acento">
             PARA REVENDEDORES
           </p>
-          <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white">
+          <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-foreground">
             COMPRÁ <span className="text-acento">MAYORISTA</span>
           </h2>
-          <p className="mt-4 max-w-xl mx-auto text-base sm:text-lg leading-relaxed text-zinc-400">
+          <p className="mt-4 max-w-xl mx-auto text-base sm:text-lg leading-relaxed text-tenue">
             Accedé a precios de fábrica desde solo {MINIMO_MAYORISTA} prendas. Ideal para revendedores, tiendas y comerciantes.
           </p>
           <div className="mt-8 flex justify-center">
