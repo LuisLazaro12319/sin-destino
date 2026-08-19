@@ -64,13 +64,35 @@ export default function Home() {
         }
       `}</style>
 
-      {/* HERO AJUSTADO AL ANCHO MÁXIMO DEL CONTENEDOR */}
-      <section className="relative min-h-[85vh] bg-background text-foreground overflow-hidden flex items-center py-10 lg:py-16">
-        <div className="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
+      {/* HERO DE ALTO COMPLETO CON TRANSICIÓN RECTA Y LIMPIA */}
+      <section className="relative w-full min-h-[85vh] lg:min-h-[90vh] bg-background text-foreground overflow-hidden flex items-center">
+        
+        {/* FOTO A TOPE DE ALTO (100% HEIGHT) */}
+        <div className="absolute inset-y-0 right-0 w-full lg:w-[50vw] xl:w-[45vw] h-full pointer-events-none z-0">
+          <Image
+            src={`${BASE_PATH}/fondo-inicio.png`}
+            alt="Modelo Ropa Masculina"
+            fill
+            priority
+            className="object-cover object-center lg:object-top"
+          />
+
+          {/* DESVANECIDO RECTO VERTICAL EN EL LADO IZQUIERDO */}
+          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-background via-background/60 to-transparent z-10 hidden lg:block" />
+
+          {/* DESVANECIDO COMPLETO PARA MÓVILES */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/60 to-background lg:hidden z-10" />
+
+          {/* SUTIL ACOPLE EN BORDES SUPERIOR E INFERIOR */}
+          <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-background to-transparent z-10" />
+          <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-background to-transparent z-10" />
+        </div>
+
+        {/* CONTENIDO TEXTO / ACCIONES */}
+        <div className="relative z-20 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            {/* LADO IZQUIERDO: TEXTOS Y BENEFICIOS */}
-            <div className="lg:col-span-7 space-y-6 z-20">
+            <div className="lg:col-span-7 space-y-6">
               
               <div className="inline-flex items-center gap-2 rounded-full bg-superficie border border-borde px-3 py-1 text-xs text-tenue">
                 <span className="h-2 w-2 rounded-full bg-acento animate-pulse" />
@@ -122,32 +144,14 @@ export default function Home() {
 
             </div>
 
-            {/* LADO DERECHO: IMAGEN CON DESVANECIDO LATERAL */}
-            <div className="lg:col-span-5 relative h-[480px] lg:h-[620px] w-full flex items-center justify-center overflow-hidden rounded-lg">
-              
-              <Image
-                src={`${BASE_PATH}/fondo-inicio.png`}
-                alt="Modelo Ropa Masculina"
-                fill
-                priority
-                className="object-cover object-center"
-              />
-
-              {/* GRADIENTE DE DESVANECIDO IZQUIERDO (Usa bg-background para modo claro/oscuro) */}
-              <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-background via-background/60 to-transparent z-10" />
-
-              {/* GRADIENTES SUPERIOR E INFERIOR SUAVES */}
-              <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/40 z-10" />
-
-              {/* TEXTO VERTICAL FLOTANTE */}
-              <div className="hidden lg:block absolute right-2 top-1/2 -translate-y-1/2 rotate-90 origin-right text-[10px] font-bold tracking-[0.4em] text-tenue/50 uppercase select-none z-20 pointer-events-none">
-                ESTILO · COMODIDAD · ACTITUD
-              </div>
-
-            </div>
-
           </div>
         </div>
+
+        {/* TEXTO VERTICAL FLOTANTE */}
+        <div className="hidden lg:block absolute right-4 top-1/2 -translate-y-1/2 rotate-90 origin-right text-[10px] font-bold tracking-[0.4em] text-tenue/50 uppercase select-none z-30 pointer-events-none">
+          ESTILO · COMODIDAD · ACTITUD
+        </div>
+
       </section>
 
       {/* CINTA DESPLAZABLE */}
