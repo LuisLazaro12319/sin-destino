@@ -7,7 +7,7 @@ import { ComoComprar } from "@/components/ComoComprar";
 import { Separador } from "@/components/Separador";
 import { SeccionConFondo } from "@/components/SeccionConFondo";
 import { PromosCarrusel } from "@/components/PromosCarrusel";
-import { MARCA, BASE_PATH, FONDOS, MINIMO_MAYORISTA } from "@/lib/config";
+import { BASE_PATH, FONDOS, MINIMO_MAYORISTA } from "@/lib/config";
 
 const BENEFICIOS = [
   {
@@ -66,7 +66,6 @@ export default function Home() {
 
       {/* HERO PRINCIPAL */}
       <section className="relative w-full min-h-[85vh] lg:min-h-[90vh] bg-background text-foreground overflow-hidden flex items-center">
-        
         <div className="absolute inset-y-0 right-0 w-full lg:w-[50vw] xl:w-[45vw] h-full pointer-events-none z-0">
           <Image
             src={`${BASE_PATH}/fondo-inicio.png`}
@@ -75,7 +74,6 @@ export default function Home() {
             priority
             className="object-cover object-center lg:object-top"
           />
-
           <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-background via-background/60 to-transparent z-10 hidden lg:block" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/60 to-background lg:hidden z-10" />
           <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-background to-transparent z-10" />
@@ -84,9 +82,7 @@ export default function Home() {
 
         <div className="relative z-20 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
             <div className="lg:col-span-7 space-y-6">
-              
               <div className="inline-flex items-center gap-2 rounded-full bg-superficie border border-borde px-3 py-1 text-xs text-tenue">
                 <span className="h-2 w-2 rounded-full bg-acento animate-pulse" />
                 <span className="font-medium tracking-wide uppercase text-[11px]">
@@ -109,7 +105,7 @@ export default function Home() {
                   href="/productos"
                   className="inline-flex h-12 items-center justify-center rounded-none bg-acento px-6 text-sm font-bold uppercase tracking-wider text-black transition-transform hover:scale-[1.02] active:scale-95"
                 >
-                  VER CATÁLOGO →
+                  VER CATÁLOGO &rarr;
                 </Link>
                 <Link
                   href="/productos?ver=mayorista"
@@ -134,16 +130,13 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-
             </div>
-
           </div>
         </div>
 
         <div className="hidden lg:block absolute right-4 top-1/2 -translate-y-1/2 rotate-90 origin-right text-[10px] font-bold tracking-[0.4em] text-tenue/50 uppercase select-none z-30 pointer-events-none">
           ESTILO · COMODIDAD · ACTITUD
         </div>
-
       </section>
 
       {/* CINTA DESPLAZABLE */}
@@ -180,7 +173,7 @@ export default function Home() {
               href="/productos"
               className="shrink-0 text-sm font-bold uppercase tracking-wider text-tenue transition-colors hover:text-acento"
             >
-              Ver todo ↗
+              Ver todo &#8599;
             </Link>
           </div>
 
@@ -198,10 +191,8 @@ export default function Home() {
 
       <Separador />
 
-      {/* SECCIÓN MAYORISTA DE ALTO COMPLETO Y BOTONES CON MISMA ALTURA */}
+      {/* SECCIÓN MAYORISTA */}
       <section className="relative w-full min-h-[680px] lg:min-h-[780px] bg-black text-white flex items-center justify-center overflow-hidden py-16 px-4">
-        
-        {/* IMAGEN DE FONDO COMPLETA */}
         <Image
           src={`${BASE_PATH}/fondo-mayorista.png`}
           alt="Fondo Comprá Mayorista"
@@ -213,9 +204,7 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-black/40 z-10" />
 
-        {/* CONTENIDO CENTRAL */}
         <div className="relative z-20 mx-auto max-w-3xl text-center space-y-6">
-          
           <div className="flex items-center justify-center gap-4">
             <span className="h-[1px] w-12 bg-acento/60 hidden sm:block" />
             <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.3em] text-white/90">
@@ -233,7 +222,6 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 pb-2 border-y border-white/10 max-w-2xl mx-auto">
-            
             <div className="flex sm:flex-col items-center justify-center gap-3 text-left sm:text-center">
               <svg className="w-6 h-6 text-acento shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8" />
@@ -263,23 +251,20 @@ export default function Home() {
                 <p className="text-[11px] font-semibold text-zinc-400 uppercase">VARIEDAD</p>
               </div>
             </div>
-
           </div>
 
-          {/* BOTONES CON LA MISMA ALTURA EXACTA (h-12 / 48px) */}
           <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/productos"
               className="inline-flex h-12 items-center justify-center rounded-none bg-acento px-8 text-sm font-bold uppercase tracking-wider text-black transition-transform hover:scale-[1.02] active:scale-95 shadow-lg"
             >
-              VER CATÁLOGO →
+              VER CATÁLOGO &rarr;
             </Link>
 
-            <div className="h-12 flex items-center [&_button]:!h-9 [&_button]:!rounded-none [&_div]:!rounded-none">
+            <div className="inline-flex h-12 items-center">
               <ModoToggle tamano="lg" />
             </div>
           </div>
-
         </div>
       </section>
     </>
