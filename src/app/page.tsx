@@ -105,7 +105,7 @@ export default function Home() {
                   href="/productos"
                   className="inline-flex h-12 items-center justify-center rounded-none bg-acento px-6 text-sm font-bold uppercase tracking-wider text-black transition-transform hover:scale-[1.02] active:scale-95"
                 >
-                  VER CATÁLOGO &rarr;
+                  VER CATÁLOGO →
                 </Link>
                 <Link
                   href="/productos?ver=mayorista"
@@ -173,7 +173,7 @@ export default function Home() {
               href="/productos"
               className="shrink-0 text-sm font-bold uppercase tracking-wider text-tenue transition-colors hover:text-acento"
             >
-              Ver todo &#8599;
+              Ver todo ↗
             </Link>
           </div>
 
@@ -258,7 +258,7 @@ export default function Home() {
               href="/productos"
               className="inline-flex h-12 items-center justify-center rounded-none bg-acento px-8 text-sm font-bold uppercase tracking-wider text-black transition-transform hover:scale-[1.02] active:scale-95 shadow-lg"
             >
-              VER CATÁLOGO &rarr;
+              VER CATÁLOGO →
             </Link>
 
             <div className="inline-flex h-12 items-center">
