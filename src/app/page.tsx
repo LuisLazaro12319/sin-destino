@@ -67,7 +67,7 @@ export default function Home() {
       {/* HERO DE ALTO COMPLETO CON TRANSICIÓN RECTA Y LIMPIA */}
       <section className="relative w-full min-h-[85vh] lg:min-h-[90vh] bg-background text-foreground overflow-hidden flex items-center">
         
-        {/* FOTO A TOPE DE ALTO (100% HEIGHT) */}
+        {/* FOTO A TOPE DE ALTO */}
         <div className="absolute inset-y-0 right-0 w-full lg:w-[50vw] xl:w-[45vw] h-full pointer-events-none z-0">
           <Image
             src={`${BASE_PATH}/fondo-inicio.png`}
@@ -77,13 +77,8 @@ export default function Home() {
             className="object-cover object-center lg:object-top"
           />
 
-          {/* DESVANECIDO RECTO VERTICAL EN EL LADO IZQUIERDO */}
           <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-background via-background/60 to-transparent z-10 hidden lg:block" />
-
-          {/* DESVANECIDO COMPLETO PARA MÓVILES */}
           <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/60 to-background lg:hidden z-10" />
-
-          {/* SUTIL ACOPLE EN BORDES SUPERIOR E INFERIOR */}
           <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-background to-transparent z-10" />
           <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-background to-transparent z-10" />
         </div>
@@ -147,7 +142,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* TEXTO VERTICAL FLOTANTE */}
         <div className="hidden lg:block absolute right-4 top-1/2 -translate-y-1/2 rotate-90 origin-right text-[10px] font-bold tracking-[0.4em] text-tenue/50 uppercase select-none z-30 pointer-events-none">
           ESTILO · COMODIDAD · ACTITUD
         </div>
@@ -206,23 +200,92 @@ export default function Home() {
 
       <Separador />
 
-      {/* BANNER MAYORISTA SUELTO */}
-      <SeccionConFondo fondo={FONDOS.compras} className="px-4 py-16 sm:px-6">
-        <div className="mx-auto max-w-4xl py-8 sm:py-14 text-center">
-          <p className="mb-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-acento">
-            PARA REVENDEDORES
-          </p>
-          <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-foreground">
+      {/* NUEVA SECCIÓN MAYORISTA CON IMAGEN DE FONDO IMPACTANTE */}
+      <section className="relative w-full min-h-[520px] lg:min-h-[600px] flex items-center justify-center overflow-hidden py-16 px-4">
+        
+        {/* IMAGEN DE FONDO CON LOS MODELOS Y CORONAS DE NEÓN */}
+        <Image
+          src={`${BASE_PATH}/fondo-mayorista.png`}
+          alt="Fondo Comprá Mayorista"
+          fill
+          priority
+          className="object-cover object-center z-0"
+        />
+
+        {/* OVERLAY SUTIL PARA GARANTIZAR LEGIBILIDAD DEL TEXTO EN EL CENTRO */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
+
+        {/* CONTENIDO CENTRAL */}
+        <div className="relative z-20 mx-auto max-w-3xl text-center text-white space-y-6">
+          
+          {/* SUBTÍTULO CON LÍNEAS LATERALES */}
+          <div className="flex items-center justify-center gap-4">
+            <span className="h-[1px] w-12 bg-acento/60 hidden sm:block" />
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.3em] text-white/90">
+              TU ESTILO, TU ACTITUD
+            </p>
+            <span className="h-[1px] w-12 bg-acento/60 hidden sm:block" />
+          </div>
+
+          {/* TÍTULO PRINCIPAL */}
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none text-white">
             COMPRÁ <span className="text-acento">MAYORISTA</span>
           </h2>
-          <p className="mt-4 max-w-xl mx-auto text-base sm:text-lg leading-relaxed text-tenue">
-            Accedé a precios de fábrica desde solo {MINIMO_MAYORISTA} prendas. Ideal para revendedores, tiendas y comerciantes.
+
+          {/* DESCRIPCIÓN */}
+          <p className="max-w-xl mx-auto text-sm sm:text-base text-zinc-300 leading-relaxed font-medium">
+            Ropa de hombre y mujer al mejor precio, calidad y estilo. Accedé a precios de fábrica desde solo {MINIMO_MAYORISTA} prendas.
           </p>
-          <div className="mt-8 flex justify-center">
+
+          {/* TRES ÍCONOS / BENEFICIOS */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 pb-2 border-y border-white/10 max-w-2xl mx-auto">
+            
+            <div className="flex sm:flex-col items-center justify-center gap-3 text-left sm:text-center">
+              <svg className="w-6 h-6 text-acento shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8" />
+              </svg>
+              <div>
+                <p className="text-xs font-black uppercase tracking-wider text-white">ENVÍOS A</p>
+                <p className="text-[11px] font-semibold text-zinc-400 uppercase">TODO EL PAÍS</p>
+              </div>
+            </div>
+
+            <div className="flex sm:flex-col items-center justify-center gap-3 text-left sm:text-center">
+              <svg className="w-6 h-6 text-acento shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+              <div>
+                <p className="text-xs font-black uppercase tracking-wider text-white">CALIDAD</p>
+                <p className="text-[11px] font-semibold text-zinc-400 uppercase">GARANTIZADA</p>
+              </div>
+            </div>
+
+            <div className="flex sm:flex-col items-center justify-center gap-3 text-left sm:text-center">
+              <svg className="w-6 h-6 text-acento shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+              <div>
+                <p className="text-xs font-black uppercase tracking-wider text-white">AMPLIA</p>
+                <p className="text-[11px] font-semibold text-zinc-400 uppercase">VARIEDAD</p>
+              </div>
+            </div>
+
+          </div>
+
+          {/* BOTÓN VER CATÁLOGO + SWITCH MINORISTA/MAYORISTA */}
+          <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/productos"
+              className="inline-flex items-center justify-center rounded-xl bg-acento px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-black transition-transform hover:scale-105 active:scale-95 shadow-lg"
+            >
+              Ver catálogo
+            </Link>
+
             <ModoToggle tamano="lg" />
           </div>
+
         </div>
-      </SeccionConFondo>
+      </section>
     </>
   );
 }
