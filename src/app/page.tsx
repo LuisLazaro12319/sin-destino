@@ -191,7 +191,7 @@ export default function Home() {
       <Separador />
 
       {/* SECCIÓN MAYORISTA */}
-      <section className="relative w-full min-h-[360px] sm:min-h-[480px] lg:min-h-[780px] bg-black text-white flex items-center justify-center overflow-hidden py-10 sm:py-16 px-4">
+      <section className="relative w-full aspect-square lg:aspect-auto lg:min-h-[780px] bg-black text-white flex items-center justify-center overflow-hidden py-10 sm:py-16 px-4">
         {/* Foto recortada especial para celular (más angosta que la de PC, para que
             entre bien el contenido de los costados sin cortar a los modelos). */}
         <Image
