@@ -57,7 +57,7 @@ function IconoWhatsApp() {
 
 export function Footer() {
   return (
-    <footer className="mt-20">
+    <footer>
       <Separador />
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div>
