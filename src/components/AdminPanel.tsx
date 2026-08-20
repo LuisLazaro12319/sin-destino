@@ -486,8 +486,8 @@ export function AdminPanel() {
                   </div>
                 </div>
                 <p className="mb-4 flex flex-wrap items-center gap-2 text-[11px] text-tenue">
-                  <span className="rounded-full bg-acento/15 px-2.5 py-1 text-xs font-semibold text-acento">📐 Vertical 4:5 — ideal 1080 × 1350 px</span>
-                  <span>Más alta que ancha (como una foto de perfil de Instagram). Ocupa el costado derecho de la pantalla, de arriba a abajo — no todo el ancho. Se funde sola con el color de tu tienda del lado del texto, así no se nota el corte.</span>
+                  <span className="rounded-full bg-acento/15 px-2.5 py-1 text-xs font-semibold text-acento">📐 Vertical, proporción 0.80 a 0.90 — ideal 950 × 1050 px</span>
+                  <span>Foto de cuerpo entero (cabeza a los pies), más alta que ancha. Ocupa el costado derecho de la pantalla, de arriba a abajo — no todo el ancho. Se funde sola con el color de tu tienda del lado del texto, así no se nota el corte.</span>
                 </p>
                 <div className="grid gap-4">
                   <Campo label="Etiqueta de arriba" valor="Indumentaria masculina · Venta por mayor" />
