@@ -10,6 +10,15 @@ import { MARCA, MINIMO_MAYORISTA, BASE_PATH, FONDOS, PROMOS } from "@/lib/config
 /* WhatsApp de contacto para activar el panel (número del desarrollador). */
 const WA_CONTACTO = "5491156199449";
 
+/* Mismas frases que la cinta desplazable real del inicio (src/app/page.tsx). */
+const TEXTOS_CINTA_DEMO = [
+  "FABRICACIÓN PROPIA",
+  "HASTA 50% OFF POR MAYOR",
+  "DISEÑOS ACTUALES",
+  "ENVÍOS A TODO EL PAÍS",
+  "COMPRA SEGURA",
+];
+
 type Vista = "inicio" | "productos" | "categorias" | "promos" | "web" | "colores" | "config";
 
 const NAV: { id: Vista; nombre: string; icono: string }[] = [
@@ -235,6 +244,16 @@ export function AdminPanel() {
 
   return (
     <div className="min-h-screen bg-superficie/60">
+      <style>{`
+        @keyframes marquee-panel {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee-loop-panel {
+          width: max-content;
+          animation: marquee-panel 18s linear infinite;
+        }
+      `}</style>
       {/* Ribbon */}
       <div className="sticky top-0 z-30 bg-acento px-4 py-2.5 text-center text-sm font-semibold text-white">
         ℹ️ Vista previa del panel — así lo manejarías vos. La edición en vivo se activa al confirmar tu plan.
@@ -450,23 +469,53 @@ export function AdminPanel() {
           {vista === "web" && (
             <div className="space-y-5">
               <div className="rounded-xl border border-borde bg-background p-6">
-                <h2 className="mb-4 text-base font-semibold">Portada / Banner principal</h2>
-                <label className="mb-1.5 block text-xs font-medium text-tenue">Imagen de fondo</label>
-                <div
-                  className="relative mb-1.5 h-32 overflow-hidden rounded-lg border border-borde bg-cover bg-center"
-                  style={{ backgroundImage: `url(${BASE_PATH}/fondo-inicio.png)` }}
-                >
-                  <span className="absolute bottom-2 right-2 cursor-not-allowed rounded-none bg-background/90 px-3 py-1.5 text-xs font-semibold text-acento">🖼️ Cambiar imagen</span>
+                <h2 className="mb-4 text-base font-semibold">Portada / Hero principal</h2>
+                <label className="mb-1.5 block text-xs font-medium text-tenue">Foto del modelo</label>
+                <div className="relative mb-1.5 flex h-36 overflow-hidden rounded-lg border border-borde bg-superficie">
+                  <div className="flex flex-1 items-center justify-center px-4 text-center text-[11px] text-tenue">
+                    Acá va el texto: título, bajada y botones
+                  </div>
+                  <div
+                    className="relative h-full w-[46%] overflow-hidden bg-cover bg-top"
+                    style={{ backgroundImage: `url(${BASE_PATH}/fondo-inicio.png)` }}
+                  >
+                    <div className="absolute inset-y-0 left-0 w-1/2" style={{ background: "linear-gradient(to right, var(--background), transparent)" }} />
+                    <span className="absolute bottom-2 right-2 cursor-not-allowed rounded-none bg-background/90 px-2.5 py-1 text-[11px] font-semibold text-acento">🖼️ Cambiar</span>
+                  </div>
                 </div>
-                <p className="mb-1 flex flex-wrap items-center gap-2 text-[11px] text-tenue">
-                  <span className="rounded-full bg-acento/15 px-2.5 py-1 text-xs font-semibold text-acento">📐 Medida ideal: 1920 × 700 px</span>
-                  <span>Se ve detrás del texto del inicio. Es un fondo, así que dejá lo importante al centro.</span>
+                <p className="mb-4 flex flex-wrap items-center gap-2 text-[11px] text-tenue">
+                  <span className="rounded-full bg-acento/15 px-2.5 py-1 text-xs font-semibold text-acento">📐 Foto vertical, formato retrato</span>
+                  <span>Ocupa el costado derecho de la pantalla (no todo el ancho). Se funde sola con el color de tu tienda del lado del texto, así no se nota el corte — subís la foto y listo.</span>
                 </p>
-                <div className="mb-4"></div>
                 <div className="grid gap-4">
-                  <Campo label="Etiqueta de arriba" valor="Temporada Invierno · Venta por mayor" />
+                  <Campo label="Etiqueta de arriba" valor="Indumentaria masculina · Venta por mayor" />
                   <Campo label="Título" valor="Ropa de hombre directo de fábrica" />
-                  <Campo label="Bajada" area valor="Somos fabricantes. Elegí las prendas, armá tu pedido por mayor y lo cerramos por WhatsApp, con envíos a todas las provincias." />
+                  <Campo label="Bajada" area valor="Somos fabricantes. Elegí las prendas, armá tu pedido por mayor y lo cerramos por WhatsApp — con envíos a todo el país." />
+                </div>
+                <Bloqueado />
+              </div>
+
+              <div className="rounded-xl border border-borde bg-background p-6">
+                <h2 className="mb-1 text-base font-semibold">Cinta de frases</h2>
+                <p className="mb-4 text-sm text-tenue">La franja que se desliza sola debajo de la portada. Agregá las frases que quieras destacar.</p>
+                <div className="overflow-hidden rounded-lg bg-acento py-2.5">
+                  <div className="flex animate-marquee-loop-panel whitespace-nowrap gap-6 text-xs font-black uppercase tracking-wider text-black">
+                    {[...TEXTOS_CINTA_DEMO, ...TEXTOS_CINTA_DEMO].map((t, i) => (
+                      <span key={i} className="flex items-center gap-6">
+                        {t}
+                        <span className="text-black/50">✦</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {TEXTOS_CINTA_DEMO.map((t) => (
+                    <span key={t} className="flex items-center gap-1.5 rounded-none border border-borde bg-superficie py-1 pl-2.5 pr-1.5 text-xs">
+                      {t}
+                      <span className="cursor-not-allowed text-tenue">×</span>
+                    </span>
+                  ))}
+                  <span className="cursor-not-allowed rounded-none border border-dashed border-acento px-2.5 py-1 text-xs font-medium text-acento">+ Agregar frase</span>
                 </div>
                 <Bloqueado />
               </div>
@@ -484,21 +533,22 @@ export function AdminPanel() {
                     <PreviewFondo archivo={FONDOS.productos} nota="Detrás del catálogo completo." />
                   </div>
                   <div>
-                    <label className="mb-1.5 block text-xs font-medium text-tenue">Detrás de “Comprás por cantidad”</label>
-                    <PreviewFondo archivo={FONDOS.compras} nota="Detrás del recuadro del final del inicio." />
+                    <label className="mb-1.5 block text-xs font-medium text-tenue">Detrás de “Comprá Mayorista” (final del inicio)</label>
+                    <PreviewFondo archivo="fondo-mayorista.jpg" nota="Foto grande de fondo de toda la sección." />
                   </div>
                 </div>
                 <Bloqueado />
               </div>
 
               <div className="rounded-xl border border-borde bg-background p-6">
-                <h2 className="mb-1 text-base font-semibold">Bloque “Comprás por cantidad”</h2>
-                <p className="mb-4 text-sm text-tenue">El recuadro del final del inicio que invita a comprar por mayor.</p>
+                <h2 className="mb-1 text-base font-semibold">Bloque “Comprá Mayorista”</h2>
+                <p className="mb-4 text-sm text-tenue">La sección grande con foto de fondo, al final del inicio, que invita a comprar por mayor.</p>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <Campo label="Título" valor="¿Comprás por cantidad?" />
+                  <Campo label="Etiqueta de arriba" valor="Tu estilo, tu actitud" />
+                  <Campo label="Título" valor="Compra Mayorista" />
                   <Campo label="Mínimo de prendas para precio mayorista" valor={String(MINIMO_MAYORISTA)} />
                   <div className="sm:col-span-2">
-                    <Campo label="Texto" area valor={`Desde ${MINIMO_MAYORISTA} prendas accedés a precios mayoristas. Cambiá el modo arriba y vas a ver los precios por unidad en todo el catálogo.`} />
+                    <Campo label="Texto" area valor={`Ropa de hombre y mujer al mejor precio, calidad y estilo. Accedé a precios de fábrica desde solo ${MINIMO_MAYORISTA} prendas.`} />
                   </div>
                 </div>
                 <p className="mt-3 rounded-lg bg-acento/10 px-3 py-2 text-[11px] text-tenue">
