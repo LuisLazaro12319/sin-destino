@@ -194,7 +194,7 @@ export default function Home() {
       {/* SECCIÓN MAYORISTA */}
       <section className="relative w-full min-h-[680px] lg:min-h-[780px] bg-black text-white flex items-center justify-center overflow-hidden py-16 px-4">
         <Image
-          src={`${BASE_PATH}/fondo-mayorista.png`}
+          src={`${BASE_PATH}/fondo-mayorista.jpg`}
           alt="Fondo Comprá Mayorista"
           fill
           priority
