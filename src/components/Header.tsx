@@ -57,7 +57,7 @@ export function Header() {
 
           <Link
             href="/carrito"
-            className="relative flex h-9 items-center gap-2 rounded-full border border-borde px-3.5 text-sm transition-colors hover:border-acento"
+            className="relative flex h-9 items-center gap-2 rounded-none border border-borde px-3.5 text-sm transition-colors hover:border-acento"
           >
             <svg
               width="16"

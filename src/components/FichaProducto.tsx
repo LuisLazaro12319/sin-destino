@@ -75,7 +75,7 @@ export function FichaProducto({ producto }: { producto: Producto }) {
                 onClick={() => setColor(c)}
                 aria-label={c.nombre}
                 aria-pressed={activo}
-                className={`h-20 w-16 overflow-hidden rounded-lg border-2 transition-colors ${
+                className={`h-20 w-16 overflow-hidden rounded-none border-2 transition-colors ${
                   activo ? "border-acento" : "border-borde hover:border-tenue"
                 }`}
               >
@@ -124,7 +124,7 @@ export function FichaProducto({ producto }: { producto: Producto }) {
               href={linkConsulta(producto, modo)}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex rounded-full border border-borde px-5 py-2.5 text-sm transition-colors hover:border-acento"
+              className="mt-4 inline-flex rounded-none border border-borde px-5 py-2.5 text-sm transition-colors hover:border-acento"
             >
               Consultar por WhatsApp
             </a>
@@ -140,7 +140,7 @@ export function FichaProducto({ producto }: { producto: Producto }) {
                     onClick={() => setColor(c)}
                     aria-label={c.nombre}
                     aria-pressed={color.nombre === c.nombre}
-                    className={`h-9 w-9 rounded-full border-2 transition-colors ${
+                    className={`h-9 w-9 rounded-none border-2 transition-colors ${
                       color.nombre === c.nombre
                         ? "border-acento"
                         : "border-borde hover:border-tenue"
@@ -159,7 +159,7 @@ export function FichaProducto({ producto }: { producto: Producto }) {
                     type="button"
                     onClick={() => setTalle(t)}
                     aria-pressed={talle === t}
-                    className={`min-w-12 rounded-lg border px-3.5 py-2 text-sm transition-colors ${
+                    className={`min-w-12 rounded-none border px-3.5 py-2 text-sm transition-colors ${
                       talle === t
                         ? "border-acento bg-acento text-white"
                         : "border-borde text-tenue hover:border-tenue hover:text-foreground"
@@ -172,7 +172,7 @@ export function FichaProducto({ producto }: { producto: Producto }) {
             </Bloque>
 
             <Bloque titulo="Cantidad">
-              <div className="inline-flex items-center rounded-lg border border-borde">
+              <div className="inline-flex items-center rounded-none border border-borde">
                 <button
                   type="button"
                   onClick={() => setCantidad((c) => Math.max(1, c - 1))}
@@ -198,7 +198,7 @@ export function FichaProducto({ producto }: { producto: Producto }) {
                 type="button"
                 onClick={handleAgregar}
                 disabled={faltaElegirTalle}
-                className="rounded-full bg-acento px-7 py-3.5 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
+                className="rounded-none bg-acento px-7 py-3.5 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 {faltaElegirTalle
                   ? "Elegí un talle"
@@ -208,7 +208,7 @@ export function FichaProducto({ producto }: { producto: Producto }) {
               {agregado && (
                 <Link
                   href="/carrito"
-                  className="rounded-full border border-acento px-7 py-3.5 text-center text-sm font-medium text-acento"
+                  className="rounded-none border border-acento px-7 py-3.5 text-center text-sm font-medium text-acento"
                 >
                   ✓ Agregado · Ir a mi pedido
                 </Link>
