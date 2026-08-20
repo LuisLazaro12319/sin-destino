@@ -471,12 +471,14 @@ export function AdminPanel() {
               <div className="rounded-xl border border-borde bg-background p-6">
                 <h2 className="mb-4 text-base font-semibold">Portada / Hero principal</h2>
                 <label className="mb-1.5 block text-xs font-medium text-tenue">Foto del modelo</label>
-                <div className="relative mb-1.5 flex h-36 overflow-hidden rounded-lg border border-borde bg-superficie">
-                  <div className="flex flex-1 items-center justify-center px-4 text-center text-[11px] text-tenue">
-                    Acá va el texto: título, bajada y botones
+                <div className="relative mb-1.5 flex h-64 max-w-sm overflow-hidden rounded-lg border border-borde bg-superficie sm:h-72">
+                  <div className="flex flex-1 flex-col items-center justify-center gap-1.5 px-3 text-center text-[11px] text-tenue">
+                    <span className="font-semibold text-foreground">Título</span>
+                    <span>Bajada</span>
+                    <span className="mt-1 rounded-none border border-borde px-2 py-1 text-[10px]">Botones</span>
                   </div>
                   <div
-                    className="relative h-full w-[46%] overflow-hidden bg-cover bg-top"
+                    className="relative h-full w-[45%] shrink-0 overflow-hidden bg-cover bg-top"
                     style={{ backgroundImage: `url(${BASE_PATH}/fondo-inicio.jpg)` }}
                   >
                     <div className="absolute inset-y-0 left-0 w-1/2" style={{ background: "linear-gradient(to right, var(--background), transparent)" }} />
@@ -484,8 +486,8 @@ export function AdminPanel() {
                   </div>
                 </div>
                 <p className="mb-4 flex flex-wrap items-center gap-2 text-[11px] text-tenue">
-                  <span className="rounded-full bg-acento/15 px-2.5 py-1 text-xs font-semibold text-acento">📐 Foto vertical, formato retrato</span>
-                  <span>Ocupa el costado derecho de la pantalla (no todo el ancho). Se funde sola con el color de tu tienda del lado del texto, así no se nota el corte — subís la foto y listo.</span>
+                  <span className="rounded-full bg-acento/15 px-2.5 py-1 text-xs font-semibold text-acento">📐 Vertical 4:5 — ideal 1080 × 1350 px</span>
+                  <span>Más alta que ancha (como una foto de perfil de Instagram). Ocupa el costado derecho de la pantalla, de arriba a abajo — no todo el ancho. Se funde sola con el color de tu tienda del lado del texto, así no se nota el corte.</span>
                 </p>
                 <div className="grid gap-4">
                   <Campo label="Etiqueta de arriba" valor="Indumentaria masculina · Venta por mayor" />
