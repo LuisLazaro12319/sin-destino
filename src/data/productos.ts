@@ -30,6 +30,7 @@ export const productos: Producto[] = [
     talles: TALLES,
     colores: [NEGRO, GRIS, ARENA, AZUL],
     destacado: true,
+    foto: true,
   },
   {
     slug: "canguro-capucha",
@@ -43,6 +44,7 @@ export const productos: Producto[] = [
     talles: TALLES,
     colores: [NEGRO, GRIS, MILITAR, BLANCO],
     destacado: true,
+    foto: true,
   },
   {
     slug: "remera-oversize",
@@ -56,6 +58,7 @@ export const productos: Producto[] = [
     talles: TALLES,
     colores: [BLANCO, NEGRO, ARENA, MILITAR],
     destacado: true,
+    foto: true,
   },
   {
     slug: "jogging-frisa",
@@ -69,6 +72,7 @@ export const productos: Producto[] = [
     talles: TALLES,
     colores: [NEGRO, GRIS, AZUL],
     destacado: true,
+    foto: true,
   },
   {
     slug: "campera-rompeviento",

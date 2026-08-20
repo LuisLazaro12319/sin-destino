@@ -536,11 +536,23 @@ export function AdminPanel() {
                   </div>
                   <div>
                     <label className="mb-1.5 block text-xs font-medium text-tenue">“Comprá Mayorista” — foto para PC</label>
-                    <PreviewFondo archivo="fondo-mayorista.jpg" nota="Se ve en pantallas grandes (computadora, tablet horizontal)." />
+                    <div
+                      className="relative mb-1.5 aspect-[2/1] w-full overflow-hidden rounded-lg border border-borde bg-superficie bg-cover bg-center"
+                      style={{ backgroundImage: `url(${BASE_PATH}/fondo-mayorista.jpg)` }}
+                    >
+                      <span className="absolute bottom-2 right-2 cursor-not-allowed rounded-none bg-background/90 px-2.5 py-1 text-[11px] font-semibold text-acento">🖼️ Cambiar</span>
+                    </div>
+                    <p className="text-[11px] text-tenue">📐 Horizontal (ancha) — ideal 1920 × 960 px. Se ve en computadora y tablet.</p>
                   </div>
                   <div>
                     <label className="mb-1.5 block text-xs font-medium text-tenue">“Comprá Mayorista” — foto para celular</label>
-                    <PreviewFondo archivo="fondo-mayorista-mobile.jpg" nota="Se ve en el celular. Subí un recorte propio para que no se corten las personas de la foto." />
+                    <div
+                      className="relative mb-1.5 aspect-square w-full max-w-[240px] overflow-hidden rounded-lg border border-borde bg-superficie bg-cover bg-center"
+                      style={{ backgroundImage: `url(${BASE_PATH}/fondo-mayorista-mobile.jpg)` }}
+                    >
+                      <span className="absolute bottom-2 right-2 cursor-not-allowed rounded-none bg-background/90 px-2.5 py-1 text-[11px] font-semibold text-acento">🖼️ Cambiar</span>
+                    </div>
+                    <p className="text-[11px] text-tenue">📐 Cuadrada (1:1) — ideal 1080 × 1080 px. Se ve en el celular; subí un recorte propio para que no se corten las personas.</p>
                   </div>
                 </div>
                 <p className="mt-3 rounded-lg bg-acento/10 px-3 py-2 text-[11px] text-tenue">
