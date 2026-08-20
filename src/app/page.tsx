@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { productos } from "@/data/productos";
 import { ProductoCard } from "@/components/ProductoCard";
-import { ModoToggle } from "@/components/ModoToggle";
 import { ComoComprar } from "@/components/ComoComprar";
 import { Separador } from "@/components/Separador";
 import { SeccionConFondo } from "@/components/SeccionConFondo";
@@ -192,7 +191,7 @@ export default function Home() {
       <Separador />
 
       {/* SECCIÓN MAYORISTA */}
-      <section className="relative w-full min-h-[420px] sm:min-h-[560px] lg:min-h-[780px] bg-black text-white flex items-center justify-center overflow-hidden py-16 px-4">
+      <section className="relative w-full min-h-[360px] sm:min-h-[480px] lg:min-h-[780px] bg-black text-white flex items-center justify-center overflow-hidden py-10 sm:py-16 px-4">
         <Image
           src={`${BASE_PATH}/fondo-mayorista.jpg`}
           alt="Fondo Comprá Mayorista"
@@ -260,10 +259,6 @@ export default function Home() {
             >
               VER CATÁLOGO →
             </Link>
-
-            <div className="inline-flex h-12 items-center">
-              <ModoToggle tamano="lg" />
-            </div>
           </div>
         </div>
       </section>
