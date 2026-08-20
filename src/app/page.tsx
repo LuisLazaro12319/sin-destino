@@ -192,13 +192,24 @@ export default function Home() {
 
       {/* SECCIÓN MAYORISTA */}
       <section className="relative w-full min-h-[360px] sm:min-h-[480px] lg:min-h-[780px] bg-black text-white flex items-center justify-center overflow-hidden py-10 sm:py-16 px-4">
+        {/* Foto recortada especial para celular (más angosta que la de PC, para que
+            entre bien el contenido de los costados sin cortar a los modelos). */}
+        <Image
+          src={`${BASE_PATH}/fondo-mayorista-mobile.jpg`}
+          alt="Fondo Comprá Mayorista"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center z-0 lg:hidden"
+        />
+        {/* Foto ancha para PC/tablet grande. */}
         <Image
           src={`${BASE_PATH}/fondo-mayorista.jpg`}
           alt="Fondo Comprá Mayorista"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center z-0"
+          className="hidden object-cover object-center z-0 lg:block"
         />
 
         <div className="absolute inset-0 bg-black/40 z-10" />

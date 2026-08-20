@@ -533,10 +533,17 @@ export function AdminPanel() {
                     <PreviewFondo archivo={FONDOS.productos} nota="Detrás del catálogo completo." />
                   </div>
                   <div>
-                    <label className="mb-1.5 block text-xs font-medium text-tenue">Detrás de “Comprá Mayorista” (final del inicio)</label>
-                    <PreviewFondo archivo="fondo-mayorista.jpg" nota="Foto grande de fondo de toda la sección." />
+                    <label className="mb-1.5 block text-xs font-medium text-tenue">“Comprá Mayorista” — foto para PC</label>
+                    <PreviewFondo archivo="fondo-mayorista.jpg" nota="Se ve en pantallas grandes (computadora, tablet horizontal)." />
+                  </div>
+                  <div>
+                    <label className="mb-1.5 block text-xs font-medium text-tenue">“Comprá Mayorista” — foto para celular</label>
+                    <PreviewFondo archivo="fondo-mayorista-mobile.jpg" nota="Se ve en el celular. Subí un recorte propio para que no se corten las personas de la foto." />
                   </div>
                 </div>
+                <p className="mt-3 rounded-lg bg-acento/10 px-3 py-2 text-[11px] text-tenue">
+                  💡 Esta sección pide <strong className="text-foreground">2 fotos</strong> porque la del celular necesita un recorte distinto al de PC — si usás una sola foto muy panorámica, en el celular se puede cortar lo importante de los costados.
+                </p>
                 <Bloqueado />
               </div>
 
