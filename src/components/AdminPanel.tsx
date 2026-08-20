@@ -457,8 +457,8 @@ export function AdminPanel() {
                   <span><span className="font-semibold text-acento">Subir promo</span> — podés sumar varias y ordenarlas.</span>
                 </div>
                 <p className="mt-2.5 flex flex-wrap items-center gap-2">
-                  <span className="rounded-full bg-acento/15 px-2.5 py-1 text-xs font-semibold text-acento">📐 Medida ideal: 1600 × 600 px</span>
-                  <span className="text-xs">(proporción 8:3, tipo cartel ancho). Con esa medida entra justa, sin recortes.</span>
+                  <span className="rounded-full bg-acento/15 px-2.5 py-1 text-xs font-semibold text-acento">📐 Medida ideal: 1894 × 592 px</span>
+                  <span className="text-xs">(proporción 16:5, tipo cartel ancho). Con esa medida entra justa, sin recortes.</span>
                 </p>
               </div>
               <Bloqueado />
@@ -537,12 +537,12 @@ export function AdminPanel() {
                   <div>
                     <label className="mb-1.5 block text-xs font-medium text-tenue">“Comprá Mayorista” — foto para PC</label>
                     <div
-                      className="relative mb-1.5 aspect-[2/1] w-full overflow-hidden rounded-lg border border-borde bg-superficie bg-cover bg-center"
+                      className="relative mb-1.5 aspect-[1894/777] w-full overflow-hidden rounded-lg border border-borde bg-superficie bg-cover bg-center"
                       style={{ backgroundImage: `url(${BASE_PATH}/fondo-mayorista.jpg)` }}
                     >
                       <span className="absolute bottom-2 right-2 cursor-not-allowed rounded-none bg-background/90 px-2.5 py-1 text-[11px] font-semibold text-acento">🖼️ Cambiar</span>
                     </div>
-                    <p className="text-[11px] text-tenue">📐 Horizontal (ancha) — ideal 1920 × 960 px. Se ve en computadora y tablet.</p>
+                    <p className="text-[11px] text-tenue">📐 Horizontal (ancha) — ideal 1894 × 777 px. Se ve en computadora y tablet.</p>
                   </div>
                   <div>
                     <label className="mb-1.5 block text-xs font-medium text-tenue">“Comprá Mayorista” — foto para celular</label>
