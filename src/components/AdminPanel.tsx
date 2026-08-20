@@ -477,7 +477,7 @@ export function AdminPanel() {
                   </div>
                   <div
                     className="relative h-full w-[46%] overflow-hidden bg-cover bg-top"
-                    style={{ backgroundImage: `url(${BASE_PATH}/fondo-inicio.png)` }}
+                    style={{ backgroundImage: `url(${BASE_PATH}/fondo-inicio.jpg)` }}
                   >
                     <div className="absolute inset-y-0 left-0 w-1/2" style={{ background: "linear-gradient(to right, var(--background), transparent)" }} />
                     <span className="absolute bottom-2 right-2 cursor-not-allowed rounded-none bg-background/90 px-2.5 py-1 text-[11px] font-semibold text-acento">🖼️ Cambiar</span>

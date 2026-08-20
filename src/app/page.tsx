@@ -68,7 +68,7 @@ export default function Home() {
       <section className="relative w-full min-h-[85vh] lg:min-h-[90vh] bg-background text-foreground overflow-hidden flex items-center">
         <div className="absolute inset-y-0 right-0 w-full lg:w-[50vw] xl:w-[45vw] h-full pointer-events-none z-0">
           <Image
-            src={`${BASE_PATH}/fondo-inicio.png`}
+            src={`${BASE_PATH}/fondo-inicio.jpg`}
             alt="Modelo Ropa Masculina"
             fill
             priority
@@ -192,7 +192,7 @@ export default function Home() {
       <Separador />
 
       {/* SECCIÓN MAYORISTA */}
-      <section className="relative w-full min-h-[680px] lg:min-h-[780px] bg-black text-white flex items-center justify-center overflow-hidden py-16 px-4">
+      <section className="relative w-full min-h-[420px] sm:min-h-[560px] lg:min-h-[780px] bg-black text-white flex items-center justify-center overflow-hidden py-16 px-4">
         <Image
           src={`${BASE_PATH}/fondo-mayorista.jpg`}
           alt="Fondo Comprá Mayorista"
