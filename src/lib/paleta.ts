@@ -5,7 +5,7 @@
  * Mismo patrón que el modo claro/oscuro de TemaToggle.
  */
 
-export const CLAVE_ACENTO = "tienda.acento";
+export const CLAVE_ACENTO = "sindestino.acento";
 
 /** Colores sugeridos. El primero (Naranja) es el default del sitio. */
 export const PALETAS: { n: string; hex: string }[] = [

@@ -25,7 +25,7 @@ export function TemaToggle() {
     setOscuro(nuevo);
     document.documentElement.setAttribute("data-theme", nuevo ? "dark" : "light");
     try {
-      localStorage.setItem("tienda.tema", nuevo ? "dark" : "light");
+      localStorage.setItem("sindestino.tema", nuevo ? "dark" : "light");
     } catch {}
   }
 
