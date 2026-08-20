@@ -7,13 +7,13 @@
 
 export const CLAVE_ACENTO = "tienda.acento";
 
-/** Colores sugeridos. El primero (Rosa) es el default del sitio. */
+/** Colores sugeridos. El primero (Naranja) es el default del sitio. */
 export const PALETAS: { n: string; hex: string }[] = [
-  { n: "Rosa", hex: "#dd5498" },
+  { n: "Naranja", hex: "#f97316" },
   { n: "Celeste", hex: "#2ba6e8" },
   { n: "Violeta", hex: "#8b5cf6" },
   { n: "Verde", hex: "#22b07d" },
-  { n: "Coral", hex: "#f76c5e" },
+  { n: "Rosa", hex: "#dd5498" },
   { n: "Dorado", hex: "#e0a324" },
 ];
 
