@@ -1,13 +1,13 @@
 "use client";
 
-import { useModo } from "@/context/ModoContext";
+import { useTienda } from "@/context/TiendaContext";
 
 interface ModoToggleProps {
   tamano?: "sm" | "md" | "lg";
 }
 
 export function ModoToggle({ tamano = "md" }: ModoToggleProps) {
-  const { modo, setModo } = useModo();
+  const { modo, setModo } = useTienda();
 
   const tamanos = {
     sm: "text-xs px-2.5 py-1 gap-1",
